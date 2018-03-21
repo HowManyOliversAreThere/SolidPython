@@ -460,6 +460,86 @@ class OpenSCADObject(object):
         s = s.replace("difference", "union")
             
         return s
+    
+    def translate(self, *args, **kwargs):
+        from .objects import translate
+        return translate(*args, **kwargs)(self)
+    
+    def scale(self, *args, **kwargs):
+        from .objects import scale
+        return scale(*args, **kwargs)(self)
+    
+    def rotate(self, *args, **kwargs):
+        from .objects import rotate
+        return rotate(*args, **kwargs)(self)
+    
+    def mirror(self, *args, **kwargs):
+        from .objects import mirror
+        return mirror(*args, **kwargs)(self)
+    
+    def resize(self, *args, **kwargs):
+        from .objects import resize
+        return resize(*args, **kwargs)(self)
+    
+    def multmatrix(self, *args, **kwargs):
+        from .objects import multmatrix
+        return multmatrix(*args, **kwargs)(self)
+    
+    def color(self, *args, **kwargs):
+        from .objects import color
+        return color(*args, **kwargs)(self)
+    
+    def minkowski(self, *args, **kwargs):
+        from .objects import minkowski
+        return minkowski(*args, **kwargs)(self)
+    
+    def offset(self, *args, **kwargs):
+        from .objects import offset
+        return offset(*args, **kwargs)(self)
+    
+    def hull(self, *args, **kwargs):
+        from .objects import hull
+        return hull(*args, **kwargs)(self)
+    
+    def render(self, *args, **kwargs):
+        from .objects import render
+        return render(*args, **kwargs)(self)
+    
+    def linear_extrude(self, *args, **kwargs):
+        from .objects import linear_extrude
+        return linear_extrude(*args, **kwargs)(self)
+    
+    def rotate_extrude(self, *args, **kwargs):
+        from .objects import rotate_extrude
+        return rotate_extrude(*args, **kwargs)(self)
+    
+    def projection(self, *args, **kwargs):
+        from .objects import projection
+        return projection(*args, **kwargs)(self)
+    
+    def up(self, *args, **kwargs):
+        from .utils import up
+        return up(*args, **kwargs)(self)
+    
+    def down(self, *args, **kwargs):
+        from .utils import down
+        return down(*args, **kwargs)(self)
+    
+    def right(self, *args, **kwargs):
+        from .utils import right
+        return right(*args, **kwargs)(self)
+    
+    def left(self, *args, **kwargs):
+        from .utils import left
+        return left(*args, **kwargs)(self)
+    
+    def forward(self, *args, **kwargs):
+        from .utils import forward
+        return forward(*args, **kwargs)(self)
+    
+    def back(self, *args, **kwargs):
+        from .utils import back
+        return back(*args, **kwargs)(self)
 
     def add(self, child):
         '''
