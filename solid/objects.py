@@ -2,7 +2,7 @@
 Classes for OpenSCAD builtins
 """
 from .solidpython import OpenSCADObject
-#from .solidpython import IncludedOpenSCADObject
+from .solidpython import IncludedOpenSCADObject
 
 class polygon(OpenSCADObject):
     '''
