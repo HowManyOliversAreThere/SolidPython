@@ -277,6 +277,26 @@ See
 `solid/examples/animation_example.py <https://github.com/SolidCode/SolidPython/blob/master/solid/examples/animation_example.py>`__
 for more details.
 
+Pythonic Syntax
+---------------
+
+The typical OpenSCAD syntax for modifying an object is
+``modification(arguments)(object_to_modify)``. This doesn't flow well
+when reading left to right, and so in SolidPython you can use the syntax
+``object_to_modify.modification(arguments)`` to create a new object
+which has undergone the modification (the ``object_to_modify`` itself is
+not modified).
+
+Example:
+
+::
+
+    from solid import *
+    c = cube(5)
+    c = c.rotate([45,45,45])
+    c_right = c.right(10) # Uses solid.utils - see below
+    c_left = c_right.mirror([1,0,0])
+
 solid.utils
 ===========
 
